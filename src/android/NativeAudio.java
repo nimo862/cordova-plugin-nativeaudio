@@ -316,8 +316,8 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
     }
     
     @Override
-    public void onDestroy(boolean multitasking) {
-        super.onDestroy(multitasking);
+    public void onDestroy() {
+        super.onDestroy();
 
         for (HashMap.Entry<String, NativeAudioAsset> entry : assetMap.entrySet()) {
             NativeAudioAsset asset = entry.getValue();
