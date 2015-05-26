@@ -314,4 +314,18 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
             asset.resume();
         }
     }
+    
+        @Override
+    public void onDestroy(boolean multitasking) {
+        super.onDestroy(multitasking);
+
+        for (HashMap.Entry<String, NativeAudioAsset> entry : assetMap.entrySet()) {
+            NativeAudioAsset asset = entry.getValue();
+            boolean wasPlaying = asset.pause();
+            if (wasPlaying) {
+                resumeList.add(asset);
+            }
+        } 
+    }
+
 }
