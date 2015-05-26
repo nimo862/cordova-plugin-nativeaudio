@@ -47,7 +47,7 @@ public class NativeAudioAsset
 		for ( int x=0; x<voices.size(); x++)
 		{
 				NativeAudioAssetComplex voice = voices.get(x);
-				// wasPlaying |= voice.pause();
+				wasPlaying |= voice.pause();
 		}
 		return wasPlaying;
 	}
