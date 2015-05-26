@@ -322,7 +322,8 @@ public class NativeAudio extends CordovaPlugin implements AudioManager.OnAudioFo
            for (HashMap.Entry<String, NativeAudioAsset> entry : assetMap.entrySet()) {
                NativeAudioAsset asset = entry.getValue();
                asset.unload();
-           } 
+           }
+           assetMap.clear();
         } catch (IOException e) {
 		return;
 	}
